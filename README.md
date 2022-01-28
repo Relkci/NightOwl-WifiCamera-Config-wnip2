@@ -18,7 +18,7 @@ If you want to use these cameras without the paired NVR, you'll have some work t
 
 ### First
 - Get all your cameras working as intended by Night Owl. They will operate on their own WIFI SSID.  The  Wifi uses WPA2-PSK.  Don't bother trying to capture the 4-way handshake, you won't crack the PSK.  
-- Do yourself a favor and disable the time-stamp overlay on the cameras.  The hack below will allow the cameras to operate without the bundled NVR, however the camears timestamps will revert to 1/1/2000 withotu the NVR being on the network.  Best to just remove the timestamp and let your custom standalong  NVR replacement add timestamps as needed.  NOTE: its liekly that the WinNVR was operating as a NTP server for the cameras.  In future work it might be possible to add an NTP service for the cameras on the replaced-NVR-gateway and see if they update.
+- Do yourself a favor and disable the time-stamp overlay on the cameras.  The hack below will allow the cameras to operate without the bundled NVR, however the camears timestamps will revert to 1/1/2000 withotu the NVR being on the network. Those inclined can later use ONVIF Device Manager to force the cameras to use an external NTP.
 - After installing the cameras, launch the NightOwl WinIP client software on your computer and login.  Open one of the live-cameras.  The NVR and software uses beaconing to punch wholes in firewalls.  Its annoying.  But whatever.  This also adds your computer's IP into the Multi-cast channel.
 - Make sure your computer and NVR are plugged into the same networks witch. 
 - Run wireshark on the same system that has the WINIP Widnows software client software installed.  Begin capturing all traffic in promiscuios mode on the wired interface.
@@ -122,7 +122,8 @@ The captured packet will show the NVR's configuration and the configuration that
 
 The cameras listen on a handful of ports.  There is awkward HTTP front end.  Clearly never meant to be seen by consumers.
 
-![image](https://user-images.githubusercontent.com/29710634/151469347-a9d4a0c8-ac8b-41ff-a6a9-60a50cbedff0.png)
+| ![image](https://user-images.githubusercontent.com/29710634/151469347-a9d4a0c8-ac8b-41ff-a6a9-60a50cbedff0.png) | 
+|-------------------------|
 
 Other services
 
@@ -137,10 +138,15 @@ Discovered open port 8089/tcp on 172.###REDACTED
 Discovered open port 8699/tcp on 172.###REDACTED
 ```
 
+ You can use ONVIF Device Manager to further inspect the cameras.
+| ![image](https://user-images.githubusercontent.com/29710634/151470132-356b3d18-8974-4b0c-9aa3-2c0b257fc322.png) | 
+|-------------------------|
+
+
 
 
 ## Just works.
-As far as I can tell, only the WinNVR device ever reached out to the internet for "zero-config" configuration and punching wholes in your firewall.  Once the cameras are configured, the configuration will survive reboots, even when the WinNVR device is not plugged in.  
+As far as I can tell, only the WinNVR device ever reached out to the internet for "zero-config" configuration and punching wholes in your firewall.  Once the cameras are configured, the configuration will survive reboots, even when the WinNVR device is not plugged in. 
 
 ## Future work.
 I'm a little irrated it was this painful.  Ideally I'd rather have taken the origianl configuration broadcast packet and maniuplated it to be a sane configuration that we would select to match our network preference.  Having a hidden SSID is fine, but it still leakes the name and will self-idenitfy that its a nightowl camera network.  Eventually I might get around to building a conifguration tool that will natively work with the cameras.  But... I've got the camears working now without the nonsense.  Today is not that day.
