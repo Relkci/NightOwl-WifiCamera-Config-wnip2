@@ -118,6 +118,23 @@ The captured packet will show the NVR's configuration and the configuration that
   - Enable "Use RTSP/stream timecode"
   - The cameras support two-way audio, so enable "Send RTSP back-channel for talk support" if you want to use Blue-Iris for two way audio.
 
+## Camera services The cameras listen on a handful of ports.  There is awkward HTTP front end.  Clearly never meant to be seen by consumers.
+![image](https://user-images.githubusercontent.com/29710634/151469347-a9d4a0c8-ac8b-41ff-a6a9-60a50cbedff0.png)
+
+
+```
+Discovered open port 554/tcp on 172.###REDACTED
+Discovered open port 443/tcp on 172.###REDACTED
+Discovered open port 843/tcp on 172.###REDACTED
+Discovered open port 1300/tcp on 172.###REDACTED
+Discovered open port 6060/tcp on 172.###REDACTED
+Discovered open port 7000/tcp on 172.###REDACTED
+Discovered open port 8089/tcp on 172.###REDACTED
+Discovered open port 8699/tcp on 172.###REDACTED
+```
+
+
+
 ## Just works.
 As far as I can tell, only the WinNVR device ever reached out to the internet for "zero-config" configuration and punching wholes in your firewall.  Once the cameras are configured, the configuration will survive reboots, even when the WinNVR device is not plugged in.  
 
@@ -132,5 +149,7 @@ I'm a little irrated it was this painful.  Ideally I'd rather have taken the ori
 
 Anyway, now you all know.  One of the BlueIris forums will likely pick up on this and take it from where I left off.  Sad to see that these cameras are going to end up in dumpsters because the developer made them so dificult to use outside of their walled-garden.
 
+## Why is so much reacted?
+Night owl has a rediculous TOS.  They try to make you think you don't own the device you bought.  Anyway, I'm not saying I did any of this.  This is all heresay.
 
 
