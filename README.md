@@ -22,12 +22,19 @@ If you want to use these cameras without the paired NVR, you'll have some work t
 - Get all your cameras working as intended by Night Owl. They will operate on their own WIFI SSID.  The Wi-Fi uses WPA2-PSK.  Don't bother trying to capture the 4-way handshake, you won't crack the PSK.  
 - Do yourself a favor and disable the time-stamp overlay on the cameras.  The hack below will allow the cameras to operate without the bundled NVR, however the cameras timestamps will revert to 1/1/2000 without the NVR being on the network. Those inclined can later use ONVIF Device Manager to force the cameras to use an external NTP.
 - After installing the cameras, launch the NightOwl WinIP client software on your computer and login.  Open one of the live cameras.  The NVR and software uses beaconing to punch holes in firewalls.  It’s annoying.  But whatever.  This also adds your computer's IP into the Multi-cast channel.
-- Make sure your computer and NVR are plugged into the same networks witch. 
+- Make sure your computer and NVR are plugged into the same networks switch. 
 - Run Wireshark on the same system that has the WINIP Windows software client software installed.  Begin capturing all traffic in promiscuous mode on the wired interface.
+
+### Generate the config multicast packet
 - Login to the NVR using a keyboard plugged into the NVR (have the NVR plugged into a TV) 
-- Open the settings panel on the NVR, goto cameras. Attempt to "add-all" cameras.  No new cameras are found, this is ok.    
+- Open the settings panel on the NVR, goto cameras. Attempt to "add-all" cameras.  No new cameras are found, this is ok.
+- cycle throught the menus of the application.  Save the conifguration before closing (even if nothing has changed).
+
+### Check the packet capture
 - Stop the Wireshark capture.
-- Investigate Wireshark capture.  You will have captured a multicast packet from the WinNVR IP to the Multicast network that contains the configuration information for all of the cameras and listening devices assigned to the multicast channel.
+- Investigate the packet capture.  You will have captured a multicast packet from the WinNVR IP to the Multicast network.  There will likely be quite a few. 
+- Filter using the source IP of the NVR.  
+- Find the multicast packet that contains the configuration information for all of the cameras and listening devices assigned (phones, computers, etc) to the multicast channel.
 
 The capture will appear similar to below
 ```
