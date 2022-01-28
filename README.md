@@ -1,7 +1,9 @@
 # ONVIF and WIFI Information NightOwl WNIP2 Camera Series
 After searching to find a way to use the WNIP2 Wifi IP Cameras from NightOwl without having to use the packaged WNIP2 NVR (which, is the weakest part of the packaged solution NightOwl sells at discount box stores like Sams Club and Costco) I was looking at trashing the cameras and buying reputable standaling IP cameras that would support ONVIF and BlueIris, etc.
 
-I made one last attempt at trying to prevent these really decent cameras from becoming e-waste.  
+Specific camera model this is about: WINIP-2LTA-BS
+
+I made one last attempt at trying to prevent these really decent cameras from becoming e-waste.  Do note that this method effecticvely removes the cameras from any control of NightOwl.  You will ultimately loose access to the cameras on the mobile app and desktop software.  This method however also makes it possible to access the camears as though they were a traditional Wireless RSTP ONVIF securiy camera and can be added to your custom NVR solution like BlueIris or even just VLC.
 
 Heres what I learned:
 
