@@ -176,8 +176,9 @@ As far as I can tell, only the WinNVR device ever reached out to the internet fo
 ## Could Night Owl have done better?
 - There should be an option to change the bundled cameras into stand alone mode.  That would be FANTASTIC and IDEAL.  
 - The WinNVR includes a 1TB encrypted drive. Thats nice, but it doesn't have the hardware to keep up with the 8 channels the NVR supposedly is built for.
-- The configuration multicast packet is plaintext. I mean, you could have used encryption to prevent anyone from capturing the data  That would have truly made these devices e-waste. So thats for using poor-security practice, I guess.  On the other hand, someone with network-level access could sniff traffic and eventually capture the SSID and PSK that you refuse to help your customers with.  Its a security risk.  Regardless, I'd rather have the option to put the bundled cameras in stand-alone mode.  
-- Seriously, if a customer asks you if they can use the cameras without the pre-paired NVR, be honest.  Develop the option and make it user friendly.  The cameras are wonderful.  Its a shame the NVR is under-spec'd.  Its a shame the cameras would be worthless without the NVR (or without this research).
+- The configuration multicast packet is plaintext. I mean, you could have used encryption to prevent anyone from capturing the data  That would have truly made these devices e-waste. So thats for using poor-security practice, I guess.  On the other hand, someone with network-level access could sniff traffic and eventually capture the SSID and PSK that you refuse to help your customers with.  Its a security risk.  Once someone has that SSID and PSK, they can remotely access the network in front of the NVR.
+- Seriously, if a customer asks you if they can use the cameras without the pre-paired NVR, be honest.  Develop the option and make it user friendly.  
+- The cameras are wonderful.  Its a shame the NVR is under-spec'd.  Its a shame the cameras would be worthless without the NVR (or without this research).
 
 Anyway, now you all know.  One of the BlueIris forums will likely pick up on this and take it from where I left off.  Sad to see that these cameras are going to end up in dumpsters because the developer made them so difficult to use outside of their walled-garden.
 
