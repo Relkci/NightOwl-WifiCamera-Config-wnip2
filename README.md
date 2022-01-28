@@ -1,10 +1,18 @@
 # ONVIF and WIFI Information NightOwl WNIP2 Camera Series
-After searching to find a way to use the WNIP2 Wi-Fi IP Cameras from NightOwl without having to use the packaged WNIP2 NVR (which, is the weakest part of the packaged solution NightOwl sells at discount box stores like Sams Club and Costco) I was looking at trashing the cameras and buying reputable standalone IP cameras that would support ONVIF and 
-BlueIris, etc.  The bundled NVR has some cool features like AI and 2-way audio, but ultimately its just not powerful enough to keep up.  If you record 100%, the device doesn't has processing to keep up with recording and displaying realtime video.  If you use the object-triggered recording and have an active area with frequent recordings, you will end up with so many videos that it becomes effectively impossble to look at previous captures.  The NVR includes a 1TB spinning disk HDD which is fully encrypted.  Asking the NVR to play a video while also recording live video is basicaly impossible, as is queriying trigger events more than a few hours old.  The only real way to use the NVR to retrieve old data is to take the cameras offline, the NVR offline, and plugin a USB, login to the NVR via a TV and keyboard, and manually backup the recordings.  It will take days to decrypt the entire drive and load onto a USB.  The NVR hardware is just not powerful enough enoughto monitor and record 8 channels.  It does work well for live-video though-- if thats all you need.
 
+## Background 
+
+After searching to find a way to use the WNIP2 Wi-Fi IP Cameras from NightOwl without having to use the packaged WNIP2 NVR (which, is the weakest part of the packaged solution NightOwl sells at discount box stores like Sams Club and Costco) I was looking at trashing the cameras and buying reputable standalone IP cameras that would support ONVIF and 
+BlueIris, etc.
+
+The bundled NVR has some cool features like AI and 2-way audio, but ultimately its just not powerful enough to keep up.  If you record 100%, the device doesn't has processing to keep up with recording and displaying realtime video.  If you use the object-triggered recording and have an active area with frequent recordings, you will end up with so many videos that it becomes effectively impossble to look at previous captures.  The NVR includes a 1TB spinning disk HDD which is fully encrypted.  Asking the NVR to play a video while also recording live video is basicaly impossible, as is queriying trigger events more than a few hours old.  The only real way to use the NVR to retrieve old data is to take the cameras offline, the NVR offline, and plugin a USB, login to the NVR via a TV and keyboard, and manually backup the recordings.  It will take days to decrypt the entire drive and load onto a USB.  The NVR hardware is just not powerful enough enoughto monitor and record 8 channels.  It does work well for live-video though-- if thats all you need.
+
+### Don't e-waste.
 To prevent these really decent cameras from becoming e-waste.  Do note that this method effectively removes the cameras from any control of NightOwl.  You will ultimately loose access to the cameras on the mobile app and desktop software.  This method however also makes it possible to access the cameras as though they were a traditional Wireless RSTP ONVIF security camera and can be added to your custom NVR solution like BlueIris or even just VLC.
 
-Specific camera model this is about: WNIP-2LTA-BS. It should apply for any of the WNIP2 series bundled WIFI and NVR systems.  
+## Specfics:
+Specific camera model this is about: WNIP-2LTA-BS. It should apply for any of the WNIP2 series bundled WIFI and NVR systems.  The same-series stand-alone cameras support native ONVIF.  Only the cameras that came bundled with the NVR are locked-down to the NVR.  The below bypasses the lock on the walled-garden.
+
 
 
 Here is what I learned:
@@ -166,10 +174,10 @@ As far as I can tell, only the WinNVR device ever reached out to the internet fo
  Ideally I'd rather have taken the original configuration broadcast packet and manipulated it to be a sane configuration that we would select to match our network preference.  Having a hidden SSID is fine, but it still leaks the name and will self-identify that its a nightowl camera network.  Eventually I might get around to building a configuration tool that will natively work with the cameras.  But... I've got the cameras working now without the nonsense.  Today is not that day.
 
 ## Could Night Owl have done better?
-- The WinNVR includes a 1TB encrypted drive.  Querying a video from yesterday will timeout of the drive is near capacity.  Encryption, video recorders, and spinning disks aren't a match.  Replacing the included drive with an SSD didn't work. I probably could have dd'd the original drive and got it working, but... the entire WinNVR device is slow and annoying anyway.  Not to mention I don't appreciate it punching wholes in my firewall for the convenience of having  cameras access on my phone.  I can do that securely myself.
-- The configuration multicast packet is plaintext.  Why they didn't add a hard-coded encryption key on the cameras is beyond me.  That would have truly made these devices e-waste.  
-- Seriously, if a customer asks you if they can use the cameras without the pre-paired NVR, be honest.
-- Then again, their support team seemed clueless.  Since the WinNVR's connection to the network wasn't wireless (wifi is only used for the isolated communication to the cameras), the support team refused to ever discuss anything about wireless.  They won't give up the PSK because as far as their documents say, a customer would never need it, so don't give it to them.
+- There should be an option to change the bundled cameras into stand alone mode.  That would be FANTASTIC and IDEAL.  
+- The WinNVR includes a 1TB encrypted drive. Thats nice, but it doesn't have the hardware to keep up with the 8 channels the NVR supposedly is built for.
+- The configuration multicast packet is plaintext. I mean, you could have used encryption to prevent anyone from capturing the data  That would have truly made these devices e-waste. So thats for using poor-security practice, I guess.  On the other hand, someone with network-level access could sniff traffic and eventually capture the SSID and PSK that you refuse to help your customers with.  Its a security risk.  Regardless, I'd rather have the option to put the bundled cameras in stand-alone mode.  
+- Seriously, if a customer asks you if they can use the cameras without the pre-paired NVR, be honest.  Develop the option and make it user friendly.  The cameras are wonderful.  Its a shame the NVR is under-spec'd.  Its a shame the cameras would be worthless without the NVR (or without this research).
 
 Anyway, now you all know.  One of the BlueIris forums will likely pick up on this and take it from where I left off.  Sad to see that these cameras are going to end up in dumpsters because the developer made them so difficult to use outside of their walled-garden.
 
