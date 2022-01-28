@@ -118,7 +118,10 @@ The captured packet will show the NVR's configuration and the configuration that
   - Enable "Use RTSP/stream timecode"
   - The cameras support two-way audio, so enable "Send RTSP back-channel for talk support" if you want to use Blue-Iris for two way audio.
 
-## Camera services The cameras listen on a handful of ports.  There is awkward HTTP front end.  Clearly never meant to be seen by consumers.
+## Camera services 
+
+The cameras listen on a handful of ports.  There is awkward HTTP front end.  Clearly never meant to be seen by consumers.
+
 ![image](https://user-images.githubusercontent.com/29710634/151469347-a9d4a0c8-ac8b-41ff-a6a9-60a50cbedff0.png)
 
 
