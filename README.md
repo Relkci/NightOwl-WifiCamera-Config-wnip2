@@ -18,12 +18,15 @@ Here is what I learned:
 ## The hack.
 If you want to use these cameras without the paired NVR, you'll have some work to do to capture network traffic and to design a network that can live without the paired NVR.
 
-### First
+### Prepare the cameras
 - Get all your cameras working as intended by Night Owl. They will operate on their own WIFI SSID.  The Wi-Fi uses WPA2-PSK.  Don't bother trying to capture the 4-way handshake, you won't crack the PSK.  
 - Do yourself a favor and disable the time-stamp overlay on the cameras.  The hack below will allow the cameras to operate without the bundled NVR, however the cameras timestamps will revert to 1/1/2000 without the NVR being on the network. Those inclined can later use ONVIF Device Manager to force the cameras to use an external NTP.
-- After installing the cameras, launch the NightOwl WinIP client software on your computer and login.  Open one of the live cameras.  The NVR and software uses beaconing to punch holes in firewalls.  It’s annoying.  But whatever.  This also adds your computer's IP into the Multi-cast channel.
-- Make sure your computer and NVR are plugged into the same networks switch. 
-- Run Wireshark on the same system that has the WINIP Windows software client software installed.  Begin capturing all traffic in promiscuous mode on the wired interface.
+
+### Install software.
+- After installing the cameras, download and launch the NightOwl Protect client software on your computer and login.
+- https://support.nightowlsp.com/hc/en-us/articles/360044127354
+-  Open one of the live cameras using the software. This adds your computer's IP into the Multi-cast channel that the NVR uses to communicate with local devices.  The multicast members include any software clients, mobile apps on LAN, and the cameras themselves.
+- Run Wireshark and begin capturing all traffic in promiscuous mode on the wired interface for your LAN
 
 ### Generate the config multicast packet
 - Login to the NVR using a keyboard plugged into the NVR (have the NVR plugged into a TV) 
