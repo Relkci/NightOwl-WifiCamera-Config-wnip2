@@ -194,7 +194,7 @@ These cameras have been running on my Blue Iris for years now.  That said, my Bl
 
 https://github.com/Relkci/NightOwl-WifiCamera-Config-wnip2/issues/1#issue-1563006456
 
-One of the questions inquired in this repo's issued was about the wifi passowrd scheme.  The password in my case was 16 hexidecmals, in lower case.  They didn't seem to represent anything obvious and CyberChef's Magic Intensive mode didn't find anything that looked like it was a predetermined password.  A couple years ago I sent the PSK to another user with the same camera platform and they confirmed the PSK did not work on their system.  This would suggest that every NVR-camera pairing had its own pre-set PSK.  
+One of the questions inquired in this repo's issued was about the wifi passowrd scheme.  The password in my case was 16 hexidecmals, in lower case.  They didn't seem to represent anything obvious and CyberChef's Magic Intensive mode didn't find anything that looked like it was a predetermined password.  A couple years ago I sent the PSK to another user with the same camera platform and they confirmed the PSK did not work on their system.  This would suggest that every NVR-camera pairing had its own pre-set PSK.  If anyone wants to reach out and test that outcome again, let me know.
 
 
 
