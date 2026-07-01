@@ -188,5 +188,33 @@ Night owl has a rediculous TOS.  They try to make you think you don't own the de
 
 ## An update years later...
 
-These cameras have been running on my Blue Iris for years now.  That said, my Blue Iris system just died, shame.  One of the questions inquired in this repo's issued was about the wifi passowrd scheme.  The password in my case was 16 hexidecmals, in lower case.  They didn't seem to represent anything obvious and CyberChef's Magic Intensive mode didn't find anything that looked like it was a predetermined password.  A couple years ago I sent the PSK to another user with the same camera platform and they confirmed the PSK did not work on their system.  This would suggest that every NVR-camera pairing had its own pre-set PSK.  
+These cameras have been running on my Blue Iris for years now.  That said, my Blue Iris system just died, shame.  There were a couple issues submitted to the repo-- with some good info.
 
+### Password Scheme 
+
+https://github.com/Relkci/NightOwl-WifiCamera-Config-wnip2/issues/1#issue-1563006456
+
+One of the questions inquired in this repo's issued was about the wifi passowrd scheme.  The password in my case was 16 hexidecmals, in lower case.  They didn't seem to represent anything obvious and CyberChef's Magic Intensive mode didn't find anything that looked like it was a predetermined password.  A couple years ago I sent the PSK to another user with the same camera platform and they confirmed the PSK did not work on their system.  This would suggest that every NVR-camera pairing had its own pre-set PSK.  
+
+
+
+### Another users experience 
+
+https://github.com/Relkci/NightOwl-WifiCamera-Config-wnip2/issues/3#issuecomment-2489551754
+
+```
+D2theR
+on Nov 20, 2024
+After much trial, error, lot's of factory resetting and restraint against smashing the NVR in a Office Space style fit of rage. I got it to leak the PSK and the same info from the tutorial.
+Here's what I did:
+
+I installed the stupid Windows and Android apps (links are in tutorial).
+I deleted the NVR from my device list in the app (the Windows program is hot garbage and wont let you).
+I reset my password to my account.
+Leaving one of the cameras OFF/Unplugged...
+I reset the NVR to factory default settings, then logged back in using the new credentials from the NVR.
+I started Wireshark and logged into the NightOWL windows app.
+I plugged in the OFF and placed it in "Pairing mode" by pressing and holding the reset button.
+I cheered with joy at my newly cracked cameras and gave NightOwl the finger.
+I've successfully got these connected to a Unifi AP, and will continue to probe them further to gather intel. My end goal is to use them with Home Assistant and Frigate for AI image detection.
+```
