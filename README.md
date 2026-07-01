@@ -186,3 +186,7 @@ Anyway, now you all know.  One of the BlueIris forums will likely pick up on thi
 Night owl has a rediculous TOS.  They try to make you think you don't own the device you bought.  Anyway, I'm not saying I did any of this.  This is all heresy.
 
 
+## An update years later...
+
+These cameras have been running on my Blue Iris for years now.  That said, my Blue Iris system just died, shame.  One of the questions inquired in this repo's issued was about the wifi passowrd scheme.  The password in my case was 16 hexidecmals, in lower case.  They didn't seem to represent anything obvious and CyberChef's Magic Intensive mode didn't find anything that looked like it was a predetermined password.  A couple years ago I sent the PSK to another user with the same camera platform and they confirmed the PSK did not work on their system.  This would suggest that every NVR-camera pairing had its own pre-set PSK.  
+
